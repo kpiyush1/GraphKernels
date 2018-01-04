@@ -1,4 +1,4 @@
-function [K, runtime, Phi] = spkernel(Graphs, features)
+function [K, runtime, Phi] = lspkernel(Graphs, features)
 % Compute shortest path kernel for a set of node-labeled graphs
 % Copyright 2012 Nino Shervashidze
 % Input: Graphs - a 1xN array of graphs
@@ -33,6 +33,7 @@ for i=1:N
   end
 end
 L=label_counter-1; % L is the size of the node label alphabet
+labelset=[1:L];
 disp(['the preprocessing step took ', num2str(cputime-t), ' sec']);
 t=cputime;
 

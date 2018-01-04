@@ -21,9 +21,10 @@ t=cputime; % for measuring runtime
 for i=1:N
   for j=i:N
     K(i,j)=K(i,j)+randomwalk(Graphs(i),Graphs(j),lambda);
-    K(j,i)=K(i,j);
+    K(j,i) = K(i,j);
   end
 end
+
 runtime=cputime-t;
 disp(['kernel computation took ', num2str(cputime-t), ' sec']);
 end
